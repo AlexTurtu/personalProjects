@@ -1,0 +1,118 @@
+#monster {
+  position: absolute;
+  opacity: 80%;
+  top: 100px;
+  left: 100px;
+  border-radius: 50%;
+  z-index: 2;
+}
+#buttons {
+  position: relative;
+  top: 15px;
+  left: 280px;
+  background-color: rgb(15, 71, 17);
+  width: 100px;
+  border-radius: 50%;
+  border-style: solid;
+  right: 500px;
+  background-image: linear-gradient(red, rgb(78, 74, 74));
+}
+#start {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  position: absolute;
+  float: left;
+  top: 17px;
+}
+#up {
+  border-radius: 50%;
+  position: relative;
+}
+#left {
+  border-radius: 50%;
+  left: 0cm;
+  position: relative;
+}
+#right {
+  border-radius: 50%;
+  left: 45px;
+  position: relative;
+}
+#up {
+  border-radius: 50%;
+  left: 1cm;
+  position: relative;
+}
+#down {
+  border-radius: 50%;
+  right: -40px;
+  position: relative;
+  margin: 0, 0, 0, 0;
+}
+#demo1 {
+  position: relative;
+  right: 30ps;
+}
+#square {
+  border-style: solid;
+  width: 700px;
+  height: 450px;
+  top: 0cm;
+  left: 90px;
+  padding: 0%;
+  border-width: 100px;
+  background-color: cadetblue;
+  background-image: url("https://imagebee.org/nature/free-beach-sand/free-beach-sand-wallpaper-22206-22763-hd-wallpapers-1920x1200.jpg");
+  z-index: -1;
+  background-size: cover;
+  border-image: linear-gradient(#c2ff73, #0f0e0f) 1;
+}
+#palm1 {
+  left: 200px;
+  position: relative;
+  top: 50px;
+  height: 200px;
+  width: 100px;
+  z-index: 1;
+}
+#coin {
+  position: relative;
+  box-sizing: border-box;
+  height: 100px;
+  width: 100px;
+  float: left;
+  top: 100px;
+  z-index: 1;
+}
+body {
+  background-color: black;
+}
+#score {
+  color: yellow;
+  height: 1px;
+  float: left;
+  position: sticky;
+}
+#description {
+  color: white;
+  position: sticky;
+  height: 20px;
+}
+#palm2 {
+  position: relative;
+  box-sizing: border-box;
+  height: 100px;
+  width: 100px;
+  top: 100px;
+  max-block-size: 100px;
+  z-index: 1;
+  left: 400px;
+  display: inline-block;
+}
+#scoreandbuttons {
+  position: relative;
+  margin: 100px;
+  max-block-size: 200px;
+}

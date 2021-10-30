@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pink Rally</title>
+    <link rel="stylesheet" href="carstyle.css" />
+    <script src="carscript.js"></script>
+  </head>
+  <body>
+    <!-- This it the right side panel -->
+    <aside id="sideright" class="sidebar"></aside>
+    <!-- This is the left panel -->
+    <aside id="sideleft" class="sidebar">
+      <div id="score" class="gameinfo">Score:</div>
+      <div>
+        <button id="startbutton" onclick="StartGame()">Start</button>
+      </div>
+    </aside>
+    <!-- This is the main screen where action should happen -->
+    <div id="mainScreen">
+      <!-- the Car container -->
+      <section id="carContainer">
+        <img id="carMain" src="img/carTopCenterd.png" height="200px" alt="" />
+      </section>
+      <section id="yellowCar">
+        <img src="img/yellowCar.png" height="200px" alt="" />
+      </section>
+      <sectio id="greenCar">
+        <img src="img/greenCar.png" height="200px" alt="" />
+      </sectio>
+      <selection id="lines">
+        <section id="roadline0"></section>
+      </selection>
+    </div>
+  </body>
+</html>
