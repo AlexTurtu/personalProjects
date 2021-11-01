@@ -1,0 +1,72 @@
+#test1 {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  /* background-color: blue; */
+  left: 0px;
+  top: 0px;
+  background-image: url("img/tankright.png");
+}
+#test2 {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  /* background-color: red; */
+  left: 700px;
+  top: 500px;
+  background-image: url("img/tankleft1.png");
+}
+* {
+  margin: 0px;
+  border: 0px;
+}
+#maincontainer {
+  position: absolute;
+  border-style: solid;
+  border-width: 10px;
+  height: 600px;
+  width: 800px;
+  background-color: bisque;
+  border-color: darkgray;
+}
+body {
+  position: absolute;
+  left: 25%;
+  background-image: url("img/back.jpg");
+}
+#obst1 {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  background-image: url("img/obst1.png");
+  background-size: 100px 100px;
+  top: 200px;
+  left: 100px;
+}
+#obst2 {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  background-image: url("img/obst1.png");
+  background-size: 100px 100px;
+  top: -100px;
+  left: 200px;
+}
+#obst3 {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  background-image: url("img/obst1.png");
+  background-size: 100px 100px;
+  top: 0px;
+  left: 600px;
+}
+#obst4 {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  background-image: url("img/obst1.png");
+  background-size: 100px 100px;
+  top: 100px;
+  left: 300px;
+}
