@@ -16,20 +16,21 @@ var y = 0;
 var x = 0;
 var x1 = 700;
 var y1 = 500;
-var score = 0;
+
 // bullets variables
 var bul1left = 0;
 var bul1top = 0;
 
 //other variables
-var xx1 = 0;
-
+var xx1 = 0; //test variable
+var score = 0;
+var score1 = 0;
 document.onkeydown = arrowCheck;
 document.onkeydown = arrowCheck;
 
 function arrowCheck(e) {
   // MOVEMENT FUNCTION BENINGN
-  //movement of brlue square
+  //movement of brlue square - check functions on bottom
   if (e.keyCode == "39") {
     moveright();
   } else if (e.keyCode == "37") {
@@ -141,13 +142,16 @@ function arrowCheck(e) {
 }
 function checkMatch() {
   if (x == x1 && y == y1) {
-    alert("Gotchaaaa!");
     score = score + 100;
-    if (score == 1100) {
-      alert("Game Over! Score and position will be reset!");
-      window.location.reload();
+    if (score >= 1000) {
+      alert(
+        "Game Over! Blue Wins! Score and position will be reset in 3 seconds!"
+      );
+      setInterval(() => {
+        window.location.reload();
+      }, 3000);
     }
-    document.getElementById("score").innerHTML = "Score: " + score;
+    document.getElementById("score").innerHTML = "Score Blue: " + score;
   }
 }
 function start() {
