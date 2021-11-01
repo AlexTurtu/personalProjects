@@ -144,7 +144,7 @@ function checkMatch() {
     alert("Gotchaaaa!");
     score = score + 100;
     if (score == 1100) {
-      alert("Game Over! Score and position will be reset");
+      alert("Game Over! Score and position will be reset!");
       window.location.reload();
     }
     document.getElementById("score").innerHTML = "Score: " + score;

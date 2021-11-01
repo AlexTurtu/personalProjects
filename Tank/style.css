@@ -27,8 +27,8 @@
   border-width: 10px;
   height: 600px;
   width: 800px;
-  background-color: bisque;
-  border-color: darkgray;
+
+  border-color: rgb(26, 25, 25);
   background-image: url("https://images3.alphacoders.com/270/thumb-1920-27025.png");
 }
 body {
