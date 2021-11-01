@@ -4,11 +4,20 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Tank</title>
     <link rel="stylesheet" href="style.css" />
     <script src="script.js"></script>
   </head>
   <body>
+    <div id="info">
+      *The blue tank needs to catch the red one - Game ends when score is 1000
+      <hr />
+      <button id="buttonres1" onclick="window.location.reload()">
+        Reset Game
+      </button>
+      <p id="score">Score: 0</p>
+    </div>
+
     <div id="maincontainer">
       <section id="test1" class="test1"></section>
       <section id="test2"></section>
@@ -16,6 +25,8 @@
       <section id="obst2"></section>
       <section id="obst3"></section>
       <section id="obst4"></section>
+      <section id="obst5"></section>
+      <section id="obst6"></section>
     </div>
   </body>
 </html>

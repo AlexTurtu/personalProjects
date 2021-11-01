@@ -1,5 +1,5 @@
-var obst1top = 200;
 //obstacle variables
+var obst1top = 200;
 var obst1left = 0;
 var obst2top = 0;
 var obst2left = 100;
@@ -7,11 +7,16 @@ var obst3top = 200;
 var obst3lft = 600;
 var obst4top = 500;
 var obst4left = 300;
+var obst5top = 0;
+var obst5left = 400;
+var obst6top = 100;
+var obst6left = 100;
 //tanks variables
 var y = 0;
 var x = 0;
 var x1 = 700;
 var y1 = 500;
+var score = 0;
 
 document.onkeydown = arrowCheck;
 document.onkeydown = arrowCheck;
@@ -27,9 +32,13 @@ function arrowCheck(e) {
         if (x != obst2left || y != obst2top) {
           if (x != obst3lft - 100 || y != obst3top) {
             if (x != obst4left - 100 || y != obst4top - 100) {
-              x = x + 100;
-              document.getElementById("test1").style.left = x + "px";
-              checkMatch();
+              if (x != obst5left - 100 || y != obst5top + 100) {
+                if (x != obst6left - 100 || y != obst6top + 300) {
+                  x = x + 100;
+                  document.getElementById("test1").style.left = x + "px";
+                  checkMatch();
+                }
+              }
             }
           }
         }
@@ -44,9 +53,13 @@ function arrowCheck(e) {
         if (x != obst2left + 200 || y != obst2top) {
           if (x != obst3lft + 100 || y != obst3top) {
             if (x != obst4left + 100 || y != obst4top - 100) {
-              x = x - 100;
-              document.getElementById("test1").style.left = x + "px";
-              checkMatch();
+              if (x != obst5left + 100 || y != obst5top + 100) {
+                if (x != obst6left + 100 || y != obst6top + 300) {
+                  x = x - 100;
+                  document.getElementById("test1").style.left = x + "px";
+                  checkMatch();
+                }
+              }
             }
           }
         }
@@ -61,9 +74,13 @@ function arrowCheck(e) {
         if (x != obst2left + 100 || y != obst2top + 100) {
           if (x != obst3lft || y != obst3top + 100) {
             if (x != obst4left || y != obst4top) {
-              y = y - 100;
-              document.getElementById("test1").style.top = y + "px";
-              checkMatch();
+              if (x != obst5left || y != obst5top + 200) {
+                if (x != obst6left || y != obst6top + 400) {
+                  y = y - 100;
+                  document.getElementById("test1").style.top = y + "px";
+                  checkMatch();
+                }
+              }
             }
           }
         }
@@ -78,9 +95,13 @@ function arrowCheck(e) {
         if (x != obst2left + 100 || y != obst2top - 100) {
           if (x != obst3lft || y != obst3top - 100) {
             if (x != obst4left || y != obst4top - 200) {
-              y = y + 100;
-              document.getElementById("test1").style.top = y + "px";
-              checkMatch();
+              if (x != obst5left || y != obst5top) {
+                if (x != obst6left || y != obst6top + 200) {
+                  y = y + 100;
+                  document.getElementById("test1").style.top = y + "px";
+                  checkMatch();
+                }
+              }
             }
           }
         }
@@ -97,9 +118,13 @@ function arrowCheck(e) {
         if (x1 != obst2left || y1 != obst2top) {
           if (x1 != obst3lft - 100 || y1 != obst3top) {
             if (x1 != obst4left - 100 || y1 != obst4top - 100) {
-              x1 = x1 + 100;
-              document.getElementById("test2").style.left = x1 + "px";
-              checkMatch();
+              if (x1 != obst5left - 100 || y1 != obst5top + 100) {
+                if (x1 != obst6left - 100 || y1 != obst6top + 300) {
+                  x1 = x1 + 100;
+                  document.getElementById("test2").style.left = x1 + "px";
+                  checkMatch();
+                }
+              }
             }
           }
         }
@@ -114,9 +139,13 @@ function arrowCheck(e) {
         if (x1 != obst2left + 200 || y1 != obst2top) {
           if (x1 != obst3lft + 100 || y1 != obst3top) {
             if (x1 != obst4left + 100 || y1 != obst4top - 100) {
-              x1 = x1 - 100;
-              document.getElementById("test2").style.left = x1 + "px";
-              checkMatch();
+              if (x1 != obst5left + 100 || y1 != obst5top + 100) {
+                if (x1 != obst6left + 100 || y1 != obst6top + 300) {
+                  x1 = x1 - 100;
+                  document.getElementById("test2").style.left = x1 + "px";
+                  checkMatch();
+                }
+              }
             }
           }
         }
@@ -131,9 +160,13 @@ function arrowCheck(e) {
         if (x1 != obst2left + 100 || y1 != obst2top + 100) {
           if (x1 != obst3lft || y1 != obst3top + 100) {
             if (x1 != obst4left || y1 != obst4top) {
-              y1 = y1 - 100;
-              document.getElementById("test2").style.top = y1 + "px";
-              checkMatch();
+              if (x1 != obst5left || y1 != obst5top + 200) {
+                if (x1 != obst6left || y1 != obst6top + 400) {
+                  y1 = y1 - 100;
+                  document.getElementById("test2").style.top = y1 + "px";
+                  checkMatch();
+                }
+              }
             }
           }
         }
@@ -148,9 +181,13 @@ function arrowCheck(e) {
         if (x1 != obst2left + 100 || y1 != obst2top - 100) {
           if (x1 != obst3lft || y1 != obst3top - 100) {
             if (x1 != obst4left || y1 != obst4top - 200) {
-              y1 = y1 + 100;
-              document.getElementById("test2").style.top = y1 + "px";
-              checkMatch();
+              if (x1 != obst5left || y1 != obst5top) {
+                if (x1 != obst6left || y1 != obst6top + 200) {
+                  y1 = y1 + 100;
+                  document.getElementById("test2").style.top = y1 + "px";
+                  checkMatch();
+                }
+              }
             }
           }
         }
@@ -162,5 +199,11 @@ function arrowCheck(e) {
 function checkMatch() {
   if (x == x1 && y == y1) {
     alert("Gotchaaaa!");
+    score = score + 100;
+    if (score == 1100) {
+      alert("Game Over!");
+      window.location.reload();
+    }
+    document.getElementById("score").innerHTML = "Score: " + score;
   }
 }
