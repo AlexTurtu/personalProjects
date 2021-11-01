@@ -6,6 +6,7 @@
   left: 0px;
   top: 0px;
   background-image: url("img/tankright.png");
+  z-index: 9;
 }
 #test2 {
   width: 100px;
@@ -96,4 +97,20 @@ body {
 #score {
   position: relative;
   left: 700px;
+}
+#bullet1 {
+  position: relative;
+  height: 20px;
+  width: 20px;
+  left: 40px;
+  top: 40px;
+  background-color: black;
+}
+#bullet2 {
+  position: relative;
+  height: 20px;
+  width: 20px;
+  left: 40px;
+  top: 40px;
+  background-color: black;
 }

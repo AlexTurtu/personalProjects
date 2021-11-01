@@ -17,6 +17,12 @@ var x = 0;
 var x1 = 700;
 var y1 = 500;
 var score = 0;
+// bullets variables
+var bul1left = 0;
+var bul1top = 0;
+
+//other variables
+var xx1 = 0;
 
 document.onkeydown = arrowCheck;
 document.onkeydown = arrowCheck;
@@ -25,89 +31,13 @@ function arrowCheck(e) {
   // MOVEMENT FUNCTION BENINGN
   //movement of brlue square
   if (e.keyCode == "39") {
-    document.getElementById("test1").style.backgroundImage =
-      "url('img/tankright.png')";
-    while (x < 700) {
-      if (x != obst1left || y != obst1top) {
-        if (x != obst2left || y != obst2top) {
-          if (x != obst3lft - 100 || y != obst3top) {
-            if (x != obst4left - 100 || y != obst4top - 100) {
-              if (x != obst5left - 100 || y != obst5top + 100) {
-                if (x != obst6left - 100 || y != obst6top + 300) {
-                  x = x + 100;
-                  document.getElementById("test1").style.left = x + "px";
-                  checkMatch();
-                }
-              }
-            }
-          }
-        }
-      }
-      return;
-    }
+    moveright();
   } else if (e.keyCode == "37") {
-    document.getElementById("test1").style.backgroundImage =
-      "url('img/tankleft.png')";
-    while (x >= 100) {
-      if (x != obst1left + 200 || y != obst1top) {
-        if (x != obst2left + 200 || y != obst2top) {
-          if (x != obst3lft + 100 || y != obst3top) {
-            if (x != obst4left + 100 || y != obst4top - 100) {
-              if (x != obst5left + 100 || y != obst5top + 100) {
-                if (x != obst6left + 100 || y != obst6top + 300) {
-                  x = x - 100;
-                  document.getElementById("test1").style.left = x + "px";
-                  checkMatch();
-                }
-              }
-            }
-          }
-        }
-      }
-      return;
-    }
+    moveleft();
   } else if (e.keyCode == "38") {
-    document.getElementById("test1").style.backgroundImage =
-      "url('img/tankup.png')";
-    while (y >= 100) {
-      if (x != obst1left + 100 || y != obst1top + 100) {
-        if (x != obst2left + 100 || y != obst2top + 100) {
-          if (x != obst3lft || y != obst3top + 100) {
-            if (x != obst4left || y != obst4top) {
-              if (x != obst5left || y != obst5top + 200) {
-                if (x != obst6left || y != obst6top + 400) {
-                  y = y - 100;
-                  document.getElementById("test1").style.top = y + "px";
-                  checkMatch();
-                }
-              }
-            }
-          }
-        }
-      }
-      return;
-    }
+    moveup();
   } else if (e.keyCode == "40") {
-    document.getElementById("test1").style.backgroundImage =
-      "url('img/tankdown.png')";
-    while (y <= 400) {
-      if (x != obst1left + 100 || y != obst1top - 100) {
-        if (x != obst2left + 100 || y != obst2top - 100) {
-          if (x != obst3lft || y != obst3top - 100) {
-            if (x != obst4left || y != obst4top - 200) {
-              if (x != obst5left || y != obst5top) {
-                if (x != obst6left || y != obst6top + 200) {
-                  y = y + 100;
-                  document.getElementById("test1").style.top = y + "px";
-                  checkMatch();
-                }
-              }
-            }
-          }
-        }
-      }
-      return;
-    }
+    movedown();
   }
   // movement of red square
   else if (e.keyCode == "68") {
@@ -194,6 +124,19 @@ function arrowCheck(e) {
       }
       return;
     }
+  } else if (e.keyCode == "88") {
+    //do somehting when "X" is pressed
+    document.getElementById("bullet2").style.backgroundColor = "Yellow";
+    2;
+    setTimeout(() => {
+      document.getElementById("bullet2").style.backgroundColor = "Black";
+    }, 100);
+  } else if (e.keyCode == "77") {
+    //do somthing when "/" is pressed
+    document.getElementById("bullet1").style.backgroundColor = "Yellow";
+    setTimeout(() => {
+      document.getElementById("bullet1").style.backgroundColor = "Black";
+    }, 100);
   }
 }
 function checkMatch() {
@@ -201,9 +144,120 @@ function checkMatch() {
     alert("Gotchaaaa!");
     score = score + 100;
     if (score == 1100) {
-      alert("Game Over!");
+      alert("Game Over! Score and position will be reset");
       window.location.reload();
     }
     document.getElementById("score").innerHTML = "Score: " + score;
+  }
+}
+function start() {
+  document.getElementById("bullet1").style.left = x + 45 + "px";
+  document.getElementById("bullet1").style.top = y + 45 + "px";
+  document.getElementById("bullet2").style.left = x1 - 655 + "px";
+  document.getElementById("bullet2").style.top = y1 - 455 + "px";
+}
+
+function bullet1left() {
+  setInterval(() => {
+    while (bul1left <= 700) {
+      if (e.keyCode == "88") {
+        document.getElementById("bullet1").style.left = 45 + bul1left + "px";
+        bul1left = bul1left + 50;
+        setTimeout(() => {
+          document.getElementById("bullet1").style.left = 50 + "px";
+        }, 300);
+
+        return;
+      }
+    }
+  }, 100);
+}
+function moveright() {
+  document.getElementById("test1").style.backgroundImage =
+    "url('img/tankright.png')";
+  while (x < 700) {
+    if (x != obst1left || y != obst1top) {
+      if (x != obst2left || y != obst2top) {
+        if (x != obst3lft - 100 || y != obst3top) {
+          if (x != obst4left - 100 || y != obst4top - 100) {
+            if (x != obst5left - 100 || y != obst5top + 100) {
+              if (x != obst6left - 100 || y != obst6top + 300) {
+                x = x + 100;
+                bul1left = bul1left = 100;
+                document.getElementById("test1").style.left = x + "px";
+                checkMatch();
+              }
+            }
+          }
+        }
+      }
+    }
+    return;
+  }
+}
+function moveleft() {
+  document.getElementById("test1").style.backgroundImage =
+    "url('img/tankleft.png')";
+  while (x >= 100) {
+    if (x != obst1left + 200 || y != obst1top) {
+      if (x != obst2left + 200 || y != obst2top) {
+        if (x != obst3lft + 100 || y != obst3top) {
+          if (x != obst4left + 100 || y != obst4top - 100) {
+            if (x != obst5left + 100 || y != obst5top + 100) {
+              if (x != obst6left + 100 || y != obst6top + 300) {
+                x = x - 100;
+                document.getElementById("test1").style.left = x + "px";
+                checkMatch();
+              }
+            }
+          }
+        }
+      }
+    }
+    return;
+  }
+}
+function moveup() {
+  document.getElementById("test1").style.backgroundImage =
+    "url('img/tankup.png')";
+  while (y >= 100) {
+    if (x != obst1left + 100 || y != obst1top + 100) {
+      if (x != obst2left + 100 || y != obst2top + 100) {
+        if (x != obst3lft || y != obst3top + 100) {
+          if (x != obst4left || y != obst4top) {
+            if (x != obst5left || y != obst5top + 200) {
+              if (x != obst6left || y != obst6top + 400) {
+                y = y - 100;
+                document.getElementById("test1").style.top = y + "px";
+                checkMatch();
+              }
+            }
+          }
+        }
+      }
+    }
+    return;
+  }
+}
+function movedown() {
+  document.getElementById("test1").style.backgroundImage =
+    "url('img/tankdown.png')";
+  while (y <= 400) {
+    if (x != obst1left + 100 || y != obst1top - 100) {
+      if (x != obst2left + 100 || y != obst2top - 100) {
+        if (x != obst3lft || y != obst3top - 100) {
+          if (x != obst4left || y != obst4top - 200) {
+            if (x != obst5left || y != obst5top) {
+              if (x != obst6left || y != obst6top + 200) {
+                y = y + 100;
+                document.getElementById("test1").style.top = y + "px";
+                checkMatch();
+              }
+            }
+          }
+        }
+      }
+    }
+    return;
   }
 }
