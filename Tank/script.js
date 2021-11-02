@@ -76,6 +76,7 @@ function arrowCheck(e) {
               if (x1 != obst5left - 100 || y1 != obst5top + 100) {
                 if (x1 != obst6left - 100 || y1 != obst6top + 300) {
                   x1 = x1 + 100;
+                  enginesound();
                   document.getElementById("test2").style.left = x1 + "px";
                   navposred = "R";
                   checkMatch();
@@ -98,6 +99,7 @@ function arrowCheck(e) {
               if (x1 != obst5left + 100 || y1 != obst5top + 100) {
                 if (x1 != obst6left + 100 || y1 != obst6top + 300) {
                   x1 = x1 - 100;
+                  enginesound();
                   document.getElementById("test2").style.left = x1 + "px";
                   navposred = "L";
                   checkMatch();
@@ -120,6 +122,7 @@ function arrowCheck(e) {
               if (x1 != obst5left || y1 != obst5top + 200) {
                 if (x1 != obst6left || y1 != obst6top + 400) {
                   y1 = y1 - 100;
+                  enginesound();
                   document.getElementById("test2").style.top = y1 + "px";
                   navposred = "U";
                   checkMatch();
@@ -142,6 +145,7 @@ function arrowCheck(e) {
               if (x1 != obst5left || y1 != obst5top) {
                 if (x1 != obst6left || y1 != obst6top + 200) {
                   y1 = y1 + 100;
+                  enginesound();
                   document.getElementById("test2").style.top = y1 + "px";
                   navposred = "D";
                   checkMatch();
@@ -295,6 +299,36 @@ function retunbuller() {
 function fire1(q) {
   if (q.keyCode == "76") {
     //blue tank fire
+    if (navposblue == "L") {
+      document.getElementById("test1").style.backgroundImage =
+        "url('img/tankleftboom.png')";
+      setTimeout(() => {
+        document.getElementById("test1").style.backgroundImage =
+          "url('img/tankleft.png')";
+      }, 100);
+    } else if (navposblue == "R") {
+      document.getElementById("test1").style.backgroundImage =
+        "url('img/tankrightboom.png')";
+      setTimeout(() => {
+        document.getElementById("test1").style.backgroundImage =
+          "url('img/tankright.png')";
+      }, 100);
+    } else if (navposblue == "U") {
+      document.getElementById("test1").style.backgroundImage =
+        "url('img/tankupboom.png')";
+      setTimeout(() => {
+        document.getElementById("test1").style.backgroundImage =
+          "url('img/tankup.png')";
+      }, 100);
+    } else if (navposblue == "D") {
+      document.getElementById("test1").style.backgroundImage =
+        "url('img/tankdownboom.png')";
+      setTimeout(() => {
+        document.getElementById("test1").style.backgroundImage =
+          "url('img/tankdown.png')";
+      }, 100);
+    }
+
     if (
       //check if rany tank on his right on line 1
       x >= 300 &&
@@ -432,6 +466,72 @@ function fire1(q) {
       x >= 400 &&
       x1 >= 400 &&
       navposblue == "L"
+    ) {
+      boom();
+    } else if (
+      // check if any tank below row 1
+      x == 0 &&
+      x == x1 &&
+      y < y1 &&
+      navposblue == "D"
+    ) {
+      boom();
+    } else if (
+      // check if any tank below row 3 (no need to check row 2 as per no valid position)
+      x == 200 &&
+      x == x1 &&
+      y < y1 &&
+      navposblue == "D"
+    ) {
+      boom();
+    } else if (
+      // check if any tank below row 4
+      x == 300 &&
+      x === x1 &&
+      y < y1 &&
+      y >= 0 &&
+      y <= 400 &&
+      y1 >= 0 &&
+      y1 <= 400 &&
+      navposblue == "D"
+    ) {
+      boom();
+    } else if (
+      // check if any tank below row 4
+      x == 400 &&
+      x == x1 &&
+      y >= 200 &&
+      y <= 500 &&
+      y1 >= 200 &&
+      y1 <= 600 &&
+      navposblue == "D" &&
+      y < y1
+    ) {
+      boom();
+    } else if (
+      // check if any tank below row 5
+      x == 500 &&
+      x == x1 &&
+      y < y1 &&
+      navposblue == "D"
+    ) {
+      boom();
+    } else if (
+      // check if any tank below row 6
+      x == 600 &&
+      x == x1 &&
+      y < y1 &&
+      y >= 400 &&
+      y1 >= 400 &&
+      navposblue == "D"
+    ) {
+      boom();
+    } else if (
+      // check if any tank below row 7
+      x == 700 &&
+      x == x1 &&
+      y < y1 &&
+      navposblue == "D"
     ) {
       boom();
     }
