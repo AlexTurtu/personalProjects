@@ -40,6 +40,7 @@ var countbulletx = 0;
 //sound variables
 var explosionboom = new Audio("sound/explosion.wav");
 var engines = new Audio("sound/engine.wav");
+var engines1 = new Audio("sound/engine1.wav");
 //key check
 
 document.onkeydown = arrowCheck;
@@ -76,7 +77,7 @@ function arrowCheck(e) {
               if (x1 != obst5left - 100 || y1 != obst5top + 100) {
                 if (x1 != obst6left - 100 || y1 != obst6top + 300) {
                   x1 = x1 + 100;
-                  enginesound();
+                  enginesound1();
                   document.getElementById("test2").style.left = x1 + "px";
                   navposred = "R";
                   checkMatch();
@@ -99,7 +100,7 @@ function arrowCheck(e) {
               if (x1 != obst5left + 100 || y1 != obst5top + 100) {
                 if (x1 != obst6left + 100 || y1 != obst6top + 300) {
                   x1 = x1 - 100;
-                  enginesound();
+                  enginesound1();
                   document.getElementById("test2").style.left = x1 + "px";
                   navposred = "L";
                   checkMatch();
@@ -122,7 +123,7 @@ function arrowCheck(e) {
               if (x1 != obst5left || y1 != obst5top + 200) {
                 if (x1 != obst6left || y1 != obst6top + 400) {
                   y1 = y1 - 100;
-                  enginesound();
+                  enginesound1();
                   document.getElementById("test2").style.top = y1 + "px";
                   navposred = "U";
                   checkMatch();
@@ -145,7 +146,7 @@ function arrowCheck(e) {
               if (x1 != obst5left || y1 != obst5top) {
                 if (x1 != obst6left || y1 != obst6top + 200) {
                   y1 = y1 + 100;
-                  enginesound();
+                  enginesound1();
                   document.getElementById("test2").style.top = y1 + "px";
                   navposred = "D";
                   checkMatch();
@@ -560,4 +561,7 @@ function boom() {
 //engine sound function
 function enginesound() {
   engines.play();
+}
+function enginesound1() {
+  engines1.play();
 }
