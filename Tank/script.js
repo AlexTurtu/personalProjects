@@ -11,6 +11,7 @@ var obst5top = 0;
 var obst5left = 400;
 var obst6top = 100;
 var obst6left = 100;
+
 //tanks variables
 var y = 0;
 var x = 0;
@@ -18,27 +19,50 @@ var x1 = 700;
 var y1 = 500;
 
 // bullets variables
-var bul1left = 0;
-var bul1top = 0;
+var bulletx = 0;
+var bullety = 0;
+var bulletx1 = 0;
+var bullety1 = 0;
+
+//navigation variables
+var navposblue = "R";
+var navposred = "L";
+var maximright = 700;
 
 //other variables
 var xx1 = 0; //test variable
+
+//counters
 var score = 0;
 var score1 = 0;
+var countbulletx = 0;
+
+//sound variables
+var explosionboom = new Audio("sound/explosion.wav");
+var engines = new Audio("sound/engine.wav");
+//key check
+
 document.onkeydown = arrowCheck;
 document.onkeydown = arrowCheck;
+document.onkeyup = fire1;
+
+//functions
 
 function arrowCheck(e) {
   // MOVEMENT FUNCTION BENINGN
   //movement of brlue square - check functions on bottom
   if (e.keyCode == "39") {
     moveright();
+    navposblue = "R";
   } else if (e.keyCode == "37") {
     moveleft();
+    navposblue = "L";
   } else if (e.keyCode == "38") {
     moveup();
+    navposblue = "U";
   } else if (e.keyCode == "40") {
     movedown();
+    navposblue = "D";
   }
   // movement of red square
   else if (e.keyCode == "68") {
@@ -53,6 +77,7 @@ function arrowCheck(e) {
                 if (x1 != obst6left - 100 || y1 != obst6top + 300) {
                   x1 = x1 + 100;
                   document.getElementById("test2").style.left = x1 + "px";
+                  navposred = "R";
                   checkMatch();
                 }
               }
@@ -74,6 +99,7 @@ function arrowCheck(e) {
                 if (x1 != obst6left + 100 || y1 != obst6top + 300) {
                   x1 = x1 - 100;
                   document.getElementById("test2").style.left = x1 + "px";
+                  navposred = "L";
                   checkMatch();
                 }
               }
@@ -95,6 +121,7 @@ function arrowCheck(e) {
                 if (x1 != obst6left || y1 != obst6top + 400) {
                   y1 = y1 - 100;
                   document.getElementById("test2").style.top = y1 + "px";
+                  navposred = "U";
                   checkMatch();
                 }
               }
@@ -116,6 +143,7 @@ function arrowCheck(e) {
                 if (x1 != obst6left || y1 != obst6top + 200) {
                   y1 = y1 + 100;
                   document.getElementById("test2").style.top = y1 + "px";
+                  navposred = "D";
                   checkMatch();
                 }
               }
@@ -140,41 +168,15 @@ function arrowCheck(e) {
     }, 100);
   }
 }
-function checkMatch() {
-  if (x == x1 && y == y1) {
-    score = score + 100;
-    if (score >= 1000) {
-      alert(
-        "Game Over! Blue Wins! Score and position will be reset in 3 seconds!"
-      );
-      setInterval(() => {
-        window.location.reload();
-      }, 3000);
-    }
-    document.getElementById("score").innerHTML = "Score Blue: " + score;
-  }
+function scoreplus() {
+  score = score + 100;
+  document.getElementById("score").innerHTML = "Score Blue: " + score;
 }
 function start() {
   document.getElementById("bullet1").style.left = x + 45 + "px";
   document.getElementById("bullet1").style.top = y + 45 + "px";
   document.getElementById("bullet2").style.left = x1 - 655 + "px";
   document.getElementById("bullet2").style.top = y1 - 455 + "px";
-}
-
-function bullet1left() {
-  setInterval(() => {
-    while (bul1left <= 700) {
-      if (e.keyCode == "88") {
-        document.getElementById("bullet1").style.left = 45 + bul1left + "px";
-        bul1left = bul1left + 50;
-        setTimeout(() => {
-          document.getElementById("bullet1").style.left = 50 + "px";
-        }, 300);
-
-        return;
-      }
-    }
-  }, 100);
 }
 function moveright() {
   document.getElementById("test1").style.backgroundImage =
@@ -187,7 +189,10 @@ function moveright() {
             if (x != obst5left - 100 || y != obst5top + 100) {
               if (x != obst6left - 100 || y != obst6top + 300) {
                 x = x + 100;
-                bul1left = bul1left = 100;
+                bulletx = bulletx + 100;
+                navposblue = "R";
+                enginesound();
+
                 document.getElementById("test1").style.left = x + "px";
                 checkMatch();
               }
@@ -202,6 +207,7 @@ function moveright() {
 function moveleft() {
   document.getElementById("test1").style.backgroundImage =
     "url('img/tankleft.png')";
+
   while (x >= 100) {
     if (x != obst1left + 200 || y != obst1top) {
       if (x != obst2left + 200 || y != obst2top) {
@@ -210,6 +216,10 @@ function moveleft() {
             if (x != obst5left + 100 || y != obst5top + 100) {
               if (x != obst6left + 100 || y != obst6top + 300) {
                 x = x - 100;
+                bulletx = bulletx - 100;
+                navposblue = "L";
+                enginesound();
+
                 document.getElementById("test1").style.left = x + "px";
                 checkMatch();
               }
@@ -224,6 +234,7 @@ function moveleft() {
 function moveup() {
   document.getElementById("test1").style.backgroundImage =
     "url('img/tankup.png')";
+
   while (y >= 100) {
     if (x != obst1left + 100 || y != obst1top + 100) {
       if (x != obst2left + 100 || y != obst2top + 100) {
@@ -232,7 +243,11 @@ function moveup() {
             if (x != obst5left || y != obst5top + 200) {
               if (x != obst6left || y != obst6top + 400) {
                 y = y - 100;
+                bullety = bullety - 100;
+                navposblue = "U";
+                enginesound();
                 document.getElementById("test1").style.top = y + "px";
+
                 checkMatch();
               }
             }
@@ -246,6 +261,7 @@ function moveup() {
 function movedown() {
   document.getElementById("test1").style.backgroundImage =
     "url('img/tankdown.png')";
+
   while (y <= 400) {
     if (x != obst1left + 100 || y != obst1top - 100) {
       if (x != obst2left + 100 || y != obst2top - 100) {
@@ -254,7 +270,11 @@ function movedown() {
             if (x != obst5left || y != obst5top) {
               if (x != obst6left || y != obst6top + 200) {
                 y = y + 100;
+                bullety = bullety + 100;
+                navposblue = "D";
+                enginesound();
                 document.getElementById("test1").style.top = y + "px";
+
                 checkMatch();
               }
             }
@@ -264,4 +284,180 @@ function movedown() {
     }
     return;
   }
+}
+
+function retunbuller() {
+  bulletx = x;
+
+  document.getElementById("bullet").style.left = bulletx + "px";
+  document.getElementById("bullet").style.top = bullety + "px";
+}
+function fire1(q) {
+  if (q.keyCode == "76") {
+    //blue tank fire
+    if (
+      //check if rany tank on his right on line 1
+      x >= 300 &&
+      x <= 700 &&
+      x1 >= 300 &&
+      x1 <= 700 &&
+      y1 == y &&
+      y1 == 0 &&
+      navposblue == "R" &&
+      x < x1
+    ) {
+      boom();
+    } else if (
+      //check if any tank on his right on line 2 - left
+      y == y1 &&
+      x <= 400 &&
+      x >= 100 &&
+      x1 <= 400 &&
+      x1 >= 100 &&
+      navposblue == "R" &&
+      x < x1
+    ) {
+      boom();
+    } else if (
+      //check if any tank on his right on line 2 - right
+      y == 100 &&
+      y == y1 &&
+      x <= 700 &&
+      x >= 500 &&
+      x1 <= 700 &&
+      x1 >= 500 &&
+      navposblue == "R" &&
+      x < x1
+    ) {
+      boom();
+    } else if (
+      // //check if any tank on his right on line 3
+      y == 200 &&
+      y == y1 &&
+      x <= 500 &&
+      x1 <= 500 &&
+      x >= 200 &&
+      x1 >= 200 &&
+      navposblue == "R" &&
+      x < x1
+    ) {
+      boom();
+    } else if (
+      //check if any tank on his right on line 4
+      y == 300 &&
+      y == y1 &&
+      navposblue == "R" &&
+      x < x1
+    ) {
+      boom();
+    } else if (
+      //check if any tank on his right on line 5
+      y == 400 &&
+      y == y1 &&
+      x < x1 &&
+      x >= 400 &&
+      x1 >= 400 &&
+      navposblue == "R"
+    ) {
+      boom();
+    } else if (
+      //check if any tank on his right on line 6
+      y == 500 &&
+      y == y1 &&
+      x < x1 &&
+      navposblue == "R"
+    ) {
+      boom();
+    } else if (
+      //check if any tank on his left line 1
+      x >= 300 &&
+      x <= 700 &&
+      x1 >= 300 &&
+      x1 <= 700 &&
+      y1 == y &&
+      y1 == 0 &&
+      navposblue == "L" &&
+      x > x1
+    ) {
+      boom();
+    } else if (
+      //check if any tank on his left line 2 - left
+      y == 100 &&
+      y == y1 &&
+      x <= 400 &&
+      x >= 0 &&
+      x1 <= 400 &&
+      x1 >= 0 &&
+      navposblue == "L" &&
+      x > x1
+    ) {
+      boom();
+    } else if (
+      //check if any tank on his left line 2 - right
+      y == 100 &&
+      y == y1 &&
+      x <= 700 &&
+      x >= 500 &&
+      x1 <= 700 &&
+      x1 >= 500 &&
+      navposblue == "L" &&
+      x > x1
+    ) {
+      boom();
+    } else if (
+      //check if any tank on his left line 3
+      y == 200 &&
+      y == y1 &&
+      x <= 500 &&
+      x1 <= 500 &&
+      x >= 200 &&
+      x1 >= 200 &&
+      navposblue == "L" &&
+      x > x1
+    ) {
+      boom();
+    } else if (
+      //check if any tank on his left line 4
+      y == 300 &&
+      y == y1 &&
+      navposblue == "L" &&
+      x > x1
+    ) {
+      boom();
+    } else if (
+      //check if any tank on his left line 5
+      y == 400 &&
+      y == y1 &&
+      x > x1 &&
+      x >= 400 &&
+      x1 >= 400 &&
+      navposblue == "L"
+    ) {
+      boom();
+    }
+  }
+}
+
+//boom for blue tank
+function boom() {
+  document.getElementById("test2").style.backgroundImage =
+    "url('img/boom.png')";
+  scoreplus();
+  setTimeout(() => {
+    explosionboom.play();
+    x = 0;
+    y = 0;
+    x1 = 700;
+    y1 = 500;
+    document.getElementById("test1").style.left = x + "px";
+    document.getElementById("test1").style.top = y + "px";
+    document.getElementById("test2").style.left = x1 + "px";
+    document.getElementById("test2").style.top = y1 + "px";
+    document.getElementById("test2").style.backgroundImage =
+      "url('img/tankleft1.png')";
+  }, 100);
+}
+//engine sound function
+function enginesound() {
+  engines.play();
 }
