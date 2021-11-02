@@ -94,7 +94,8 @@ body {
 #info {
   color: yellow;
 }
-#score {
+#score,
+#score1 {
   position: relative;
   left: 700px;
 }
