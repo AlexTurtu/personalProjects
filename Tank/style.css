@@ -99,3 +99,9 @@ body {
   position: relative;
   left: 700px;
 }
+#spanblue {
+  color: lightskyblue;
+}
+#spanred {
+  color: rgb(238, 98, 98);
+}

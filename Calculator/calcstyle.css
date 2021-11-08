@@ -1,0 +1,40 @@
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap");
+#maincontainer {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid black;
+  color: blueviolet;
+  height: 600px;
+  width: 400px;
+}
+#screen {
+  display: flex;
+  margin: 5px;
+  height: 30%;
+  border: 2px solid darkgreen;
+  border-radius: 5%;
+  font-family: orbitron;
+  font-size: 40px;
+}
+
+#buttons {
+  display: grid;
+  grid-template-columns: auto auto auto;
+
+  padding: 10px;
+  height: 100%;
+  grid-template-columns: 25% 25% 25% 25%;
+}
+
+.calcbutton {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  font-size: large;
+  font-weight: bold;
+  background-color: cadetblue;
+  border: 2px solid black;
+  border-radius: 5%;
+  margin: 3px;
+  color: chartreuse;
+    }
