@@ -968,7 +968,9 @@ function boom1() {
     document.getElementById("test2").style.left = x1 + "px";
     document.getElementById("test2").style.top = y1 + "px";
     document.getElementById("test1").style.backgroundImage =
-      "url('img/tankleft.png')";
+      "url('img/tankright.png')";
+    document.getElementById("test2").style.backgroundImage =
+      "url('img/tankleft1.png')";
   }, 100);
 }
 // function highscore(a) {
