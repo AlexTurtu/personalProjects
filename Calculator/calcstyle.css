@@ -6,6 +6,7 @@
   color: blueviolet;
   height: 600px;
   width: 400px;
+  background-color: goldenrod;
 }
 #screen {
   display: flex;
@@ -15,21 +16,23 @@
   border-radius: 5%;
   font-family: orbitron;
   font-size: 40px;
+  text-align: center;
+  justify-content: center;
+  background-color: hotpink;
 }
 
 #buttons {
   display: grid;
   grid-template-columns: auto auto auto;
-
   padding: 10px;
   height: 100%;
   grid-template-columns: 25% 25% 25% 25%;
 }
 
 .calcbutton {
-  display: flex;
   text-align: center;
   justify-content: center;
+  padding: 25%;
   font-size: large;
   font-weight: bold;
   background-color: cadetblue;
@@ -37,4 +40,4 @@
   border-radius: 5%;
   margin: 3px;
   color: chartreuse;
-    }
+}

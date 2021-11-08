@@ -887,7 +887,7 @@ function fire1(q) {
       boom1();
     } else if (
       // check if any tank above row 5
-      x == 400 &&
+      x == 500 &&
       x == x1 &&
       y >= 200 &&
       y <= 500 &&
@@ -901,9 +901,7 @@ function fire1(q) {
       // check if any above below row 6
       x == 600 &&
       x == x1 &&
-      y > y1 &&
-      y >= 400 &&
-      y1 >= 400 &&
+      y < y1 &&
       navposred == "U"
     ) {
       boom1();
@@ -911,7 +909,7 @@ function fire1(q) {
       // check if any above below row 7
       x == 700 &&
       x == x1 &&
-      y > y1 &&
+      y < y1 &&
       navposred == "U"
     ) {
       boom1();
