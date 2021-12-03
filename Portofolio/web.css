@@ -1,0 +1,189 @@
+@media (min-width: 600px) {
+  * {
+    margin: 0;
+    padding: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    scroll-behavior: smooth;
+  }
+
+  @keyframes navmenu {
+    from {
+      left: -100%;
+      top: 10%;
+      opacity: 0;
+    }
+    to {
+      left: 1%;
+      top: 1em;
+    }
+  }
+
+  #nav {
+    top: 1em;
+    animation-name: navmenu;
+    animation-duration: 2s;
+    position: fixed;
+    width: 98%;
+    left: 1%;
+    display: flex;
+    flex-direction: row;
+    background-color: rgb(16, 22, 100);
+
+    height: 4em;
+    color: white;
+    border-radius: 5px;
+    box-shadow: 10px 10px 10px rgb(16, 22, 100);
+    border: 1px double white;
+  }
+  @import url("https://fonts.googleapis.com/css2?family=Luxurious+Script&display=swap");
+
+  #logo {
+    position: absolute;
+    font-family: "Luxurious Script", cursive;
+    align-self: center;
+    display: flex;
+    justify-content: center;
+    left: 80%;
+    justify-self: flex-end;
+    background-color: whitesmoke;
+    color: black;
+    border-top-left-radius: 100px;
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+    width: 15vw;
+    font-size: 1.5vw;
+    padding: 0.3em;
+    margin: 2px;
+  }
+  #homeButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(16, 22, 100);
+    margin: 1em;
+    width: 5em;
+    border-radius: 10px 0px 10px;
+    box-shadow: 5px 5px 5px whitesmoke;
+  }
+  #aboutButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(16, 22, 100);
+    margin: 1em;
+    width: 5em;
+    border-radius: 10px 0px 10px;
+    box-shadow: 5px 5px 5px whitesmoke;
+  }
+  #projectsButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(16, 22, 100);
+    margin: 1em;
+    width: 5em;
+    border-radius: 10px 0px 10px;
+    box-shadow: 5px 5px 5px whitesmoke;
+  }
+  #contactButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(16, 22, 100);
+    margin: 1em;
+    width: 5em;
+    border-radius: 10px 0px 10px;
+    box-shadow: 5px 5px 5px whitesmoke;
+  }
+  #homeButton:hover {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1em;
+    width: 7em;
+    border-radius: 10px 0px 10px;
+    box-shadow: 5px 5px 5px whitesmoke;
+  }
+  #aboutButton:hover {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1em;
+    width: 7em;
+    border-radius: 10px 0px 10px;
+    box-shadow: 5px 5px 5px whitesmoke;
+  }
+  #projectsButton:hover {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1em;
+    width: 7em;
+    border-radius: 10px 0px 10px;
+    box-shadow: 5px 5px 5px whitesmoke;
+  }
+  #contactButton:hover {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1em;
+    width: 7em;
+    border-radius: 10px 0px 10px;
+    box-shadow: 5px 5px 5px whitesmoke;
+  }
+  #maincontent {
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    top: 7em;
+    padding: 1em;
+    height: 45em;
+    width: 98%;
+
+    border-left: 3px double white;
+  }
+  a {
+    text-decoration: none;
+    color: whitesmoke;
+  }
+
+  ::-webkit-scrollbar {
+    width: 1em;
+  }
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 10px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgb(16, 22, 100);
+    border-radius: 5px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgb(31, 43, 209);
+  }
+  #img1 {
+    border-radius: 300px;
+    float: right;
+    margin-right: 10em;
+    animation-name: navmenu;
+    animation-duration: 5s;
+    border-right: 2px double rgb(16, 22, 100);
+  }
+  #homeimg {
+    animation-name: navmenu;
+    animation-duration: 5s;
+    border-radius: 100px;
+    opacity: 0.8;
+    width: 50em;
+  }
+  #home {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* Media end min 600px */
+}
