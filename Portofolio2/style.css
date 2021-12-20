@@ -1,0 +1,53 @@
+:root {
+  --color1: rgb(62, 70, 60);
+  --color2: rgb(49, 112, 143);
+  --color3: rgb(80, 133, 165);
+  --color4: rgb(143, 193, 226);
+  --color5: rgb(248, 249, 251);
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+.mainContainer {
+  display: flex;
+  background-color: var(--color5);
+  height: 100vh;
+}
+.sidebar {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 100vh;
+  width: 300px;
+  background-color: var(--color4);
+  margin-left: 7%;
+  border-right: 1px dotted black;
+  box-shadow: 2px 0px 10px var(--color1);
+}
+.menuList {
+  margin: 0% 40%;
+  text-decoration: none;
+  list-style: none;
+  border-left: 2px solid var(--color2);
+}
+.menuList > li {
+  padding: 20px;
+  color: var(--color1);
+  font-size: 22px;
+}
+.logo {
+  padding: 0% 25%;
+}
+.logo > img {
+  height: 14vh;
+}
+.content {
+  display: flex;
+  background-color: var(--color5);
+  width: 100vw;
+}
+.home {
+  margin-left: 23vw;
+}
