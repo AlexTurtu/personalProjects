@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="rpsStyle.css" />
+    <title>Rock, Paper, Scissros</title>
+  </head>
+  <body>
+    <div class="header">
+      <h1>Rock, Paper, Scissros</h1>
+    </div>
+    <div class="content">
+      <div class="userChoice">
+        <img onclick="userRock()" src="img/rock.png" alt="" id="rock" />
+        <img onclick="userPaper()" src="img/paper.png" alt="" id="paper" />
+        <img
+          onclick="userScissors()"
+          src="img/scissors.png"
+          alt=""
+          id="scirssors"
+        />
+        <p id="userHasSelected">You have selected:</p>
+      </div>
+      <input type="button" value="Start" onclick="startGame() " />
+      <input type="button" value="Reset" onclick="resetAll()" />
+      <div class="selectionScreen"></div>
+      <div class="pcChoice"></div>
+      <div class="computerChoice" id="compChoice"></div>
+      <p id="computerHasSelected">Computer has selected:</p>
+      <h2>The Winner is :</h2>
+      <p id="winner"></p>
+    </div>
+
+    <script src="rps.js"></script>
+  </body>
+</html>

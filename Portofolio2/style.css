@@ -1,53 +1,103 @@
 :root {
-  --color1: rgb(62, 70, 60);
-  --color2: rgb(49, 112, 143);
-  --color3: rgb(80, 133, 165);
-  --color4: rgb(143, 193, 226);
-  --color5: rgb(248, 249, 251);
+  --backgroundColor: #1f2235;
 }
+@keyframes animation1 {
+  from {
+    padding-top: 2vh;
+    text-shadow: 10px 10px 2px tomato;
+  }
+  to {
+  }
+}
+@keyframes fadein {
+  from {
+    opacity: 0%;
+    transform: skew(50);
+  }
+  to {
+    opacity: 100%;
+  }
+}
+
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
 }
-.mainContainer {
+body {
+  background-color: var(--backgroundColor);
+  margin: 0 10%;
+}
+
+.menubar {
   display: flex;
-  background-color: var(--color5);
-  height: 100vh;
-}
-.sidebar {
+  flex-direction: row;
+  align-content: flex-end;
+  justify-content: flex-start;
+  border-bottom: 1px solid tomato;
+  border-radius: 5px;
   position: fixed;
+  opacity: 80%;
+}
+.menu > ul {
+  background-color: var(--backgroundColor);
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: space-evenly;
-  height: 100vh;
-  width: 300px;
-  background-color: var(--color4);
-  margin-left: 7%;
-  border-right: 1px dotted black;
-  box-shadow: 2px 0px 10px var(--color1);
+  height: 10vh;
+  width: 80vw;
+  align-items: center;
+  color: white;
+  font-size: 2.3vh;
 }
-.menuList {
-  margin: 0% 40%;
+li {
+  margin: 0 2vw;
   text-decoration: none;
-  list-style: none;
-  border-left: 2px solid var(--color2);
+  list-style-type: none;
 }
-.menuList > li {
-  padding: 20px;
-  color: var(--color1);
-  font-size: 22px;
+ul > img {
+  height: 13vh;
+  margin: 0;
+  padding: 0;
+  filter: invert(80);
 }
-.logo {
-  padding: 0% 25%;
+.menuli:hover {
+  animation-name: animation1;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
 }
-.logo > img {
-  height: 14vh;
+.maincontent {
+  display: flex;
 }
 .content {
+  margin-top: 12vh;
   display: flex;
-  background-color: var(--color5);
-  width: 100vw;
 }
-.home {
-  margin-left: 23vw;
+#home {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 2em;
+  /* background-color: white; */
+}
+.lefthome {
+  color: tomato;
+  width: 30vw;
+  margin-right: 20vw;
+}
+.righthome > img {
+  border-radius: 50%;
+  opacity: 60%;
+}
+.righthome {
+  justify-self: flex-end;
+}
+#welcome {
+  animation-name: fadein;
+  animation-duration: 5s;
+}
+#home > div.lefthome > h1 {
+  color: white;
 }
