@@ -120,6 +120,7 @@ p {
   display: none;
   flex-direction: column;
   border: 2px solid tomato;
+  opacity: 95%;
 }
 .isVisible {
   display: flex;
@@ -132,7 +133,7 @@ p {
   overflow: hidden;
   margin: 1rem;
   padding: 0;
-
+  opacity: 100%;
   width: 150px;
   height: 40px;
 }
