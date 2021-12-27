@@ -9,7 +9,7 @@
   </head>
   <body>
     <div class="header">
-      <h1>Rock, Paper, Scissros</h1>
+      <h2>Rock, Paper, Scissros</h2>
     </div>
     <div class="content">
       <div class="userChoice">
@@ -21,16 +21,33 @@
           alt=""
           id="scirssors"
         />
-        <p id="userHasSelected">You have selected:</p>
       </div>
-      <input type="button" value="Start" onclick="startGame() " />
-      <input type="button" value="Reset" onclick="resetAll()" />
-      <div class="selectionScreen"></div>
-      <div class="pcChoice"></div>
-      <div class="computerChoice" id="compChoice"></div>
-      <p id="computerHasSelected">Computer has selected:</p>
-      <h2>The Winner is :</h2>
-      <p id="winner"></p>
+      <div class="buttons">
+        <input type="button" value="Start" onclick="startGame() " />
+      </div>
+
+      <div class="selectionScreen">
+        <div class="computerside">
+          <p id="computerHasSelected">Computer:</p>
+          <div class="computerChoice" id="compChoice"></div>
+        </div>
+
+        <div class="userHasSelected">
+          <p id="userHasSlecedP">User:</p>
+          <div id="userSelectionDisplay"></div>
+        </div>
+      </div>
+      <div class="winResult" id="winResultId">
+        <p id="lastComputerSelect"></p>
+        <br /><br /><br />
+        <p id="lastUserSelect"></p>
+        <br /><br /><br />
+        <h2>The Winner is :</h2>
+        <br /><br />
+        <p id="winner"></p>
+        <br /><br /><br /><br />
+        <input type="button" value="Reset" onclick="resetAll()" />
+      </div>
     </div>
 
     <script src="rps.js"></script>

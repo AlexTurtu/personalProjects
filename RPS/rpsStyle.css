@@ -1,21 +1,25 @@
 @keyframes computerSelectiionAnimation {
   0% {
     background-image: url("img/rock.png");
-    background-size: 100px 100px;
+    background-repeat: no-repeat;
   }
   50% {
     background-image: url("img/paper.png");
-    background-size: 100px 100px;
+    background-repeat: no-repeat;
   }
+
   100% {
     background-image: url("img/scissors.png");
-    background-size: 100px 100px;
+    background-repeat: no-repeat;
   }
 }
-
-img {
-  width: 100px;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+
 #rock:hover {
   border-radius: 40%;
   background-color: brown;
@@ -28,26 +32,107 @@ img {
   border-radius: 40%;
   background-color: brown;
 }
-.computerChoice {
-  height: 100px;
-  width: 100px;
-}
+
 .animation1 {
   animation-name: computerSelectiionAnimation;
   animation-duration: 3s;
 }
-* {
-  margin: 10px;
-}
+
 .content {
   display: flex;
   flex-direction: column;
 }
-body > div.content > input[type="button"] {
-  background-color: burlywood;
-  width: 100px;
-  justify-self: center;
-  align-self: center;
-  height: 50px;
-  border-radius: 40%;
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  background-color: black;
+  color: tomato;
+  height: 10vh;
+  margin-bottom: 2vh;
+  padding-top: 2vh;
+}
+
+body {
+  background-color: black;
+  color: tomato;
+}
+.buttons {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 5vh;
+}
+body > div.content > div.buttons > input[type="button"] {
+  border: none;
+  background-color: tomato;
+  color: white;
+  border-radius: 20px;
+  overflow: hidden;
+  margin: 1rem;
+  padding: 0;
+  margin-bottom: 15vh;
+  width: 150px;
+  height: 40px;
+}
+.selectionScreen {
+  display: flex;
+  justify-content: space-evenly;
+  color: white;
+  font-size: small;
+}
+.computerChoice {
+  height: 120px;
+  width: 120px;
+  background-repeat: no-repeat;
+}
+.userChoice {
+  display: flex;
+  justify-content: space-evenly;
+  background-color: black;
+  margin-top: 5vh;
+  margin-bottom: 5vh;
+}
+.userHasSelected {
+  height: 120px;
+  width: 120px;
+}
+p {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+#userSelectionDisplay {
+  height: 120px;
+  width: 120px;
+  background-repeat: no-repeat;
+}
+.winResult {
+  background-color: black;
+  position: absolute;
+  height: 90vh;
+  width: 94vw;
+  margin-left: 3%;
+  margin-top: -7%;
+  border-radius: 30px;
+  justify-content: center;
+  align-items: center;
+  display: none;
+  flex-direction: column;
+  border: 2px solid tomato;
+}
+.isVisible {
+  display: flex;
+}
+#winResultId > input[type="button"] {
+  border: none;
+  background-color: tomato;
+  color: white;
+  border-radius: 20px;
+  overflow: hidden;
+  margin: 1rem;
+  padding: 0;
+
+  width: 150px;
+  height: 40px;
 }

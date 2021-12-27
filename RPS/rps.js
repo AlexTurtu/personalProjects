@@ -4,18 +4,21 @@ var computerSel = "";
 function checkResult() {}
 function userRock() {
   userSel = "rock";
-  document.getElementById("userHasSelected").innerText =
-    "You have selected: " + userSel;
+  document.getElementById("userHasSlecedP").innerText = "User: " + userSel;
+  document.getElementById("userSelectionDisplay").style.backgroundImage =
+    "url('img/rock.png')";
 }
 function userPaper() {
   userSel = "paper";
-  document.getElementById("userHasSelected").innerText =
-    "You have selected: " + userSel;
+  document.getElementById("userHasSlecedP").innerText = "User: " + userSel;
+  document.getElementById("userSelectionDisplay").style.backgroundImage =
+    "url('img/paper.png')";
 }
 function userScissors() {
   userSel = "scissors";
-  document.getElementById("userHasSelected").innerText =
-    "You have selected: " + userSel;
+  document.getElementById("userHasSlecedP").innerText = "User: " + userSel;
+  document.getElementById("userSelectionDisplay").style.backgroundImage =
+    "url('img/scissors.png')";
 }
 function startGame() {
   if (userSel == "") {
@@ -27,7 +30,7 @@ function startGame() {
   setTimeout(() => {
     compareReslut();
     document.getElementById("computerHasSelected").innerText =
-      "Computer has selected: " + computerSel;
+      "Computer : " + computerSel;
   }, 3000);
 }
 function pcSelect() {
@@ -87,7 +90,13 @@ function compareReslut() {
       winner = "Computer";
     }
   }
+  var winScreen = document.querySelector(".winResult");
+  winScreen.classList.add("isVisible");
   document.getElementById("winner").innerText = winner;
+  document.getElementById("lastComputerSelect").innerText =
+    "Computer chose: " + computerSel;
+  document.getElementById("lastUserSelect").innerText =
+    "User chose: " + userSel;
 }
 function resetAll() {
   location.reload();
