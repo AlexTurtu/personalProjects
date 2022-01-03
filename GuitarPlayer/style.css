@@ -2,20 +2,67 @@
   margin: 0;
   padding: 0;
 }
+.mainContainer {
+  display: flex;
+  flex-direction: column;
+}
 #textFieldID {
   margin-left: 5vw;
   margin-top: 5vw;
   width: 90vw;
   height: 10vh;
-  box-shadow: 0px 0px 20px tomato;
+  box-shadow: 0px 0px 20px white;
   background-color: black;
   color: yellow;
   border-radius: 20px;
 }
 body {
   background-color: black;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 .details {
   display: wrap;
   color: white;
+}
+.insturctions > p {
+  font-size: x-small;
+}
+#gifDiv {
+  height: 300px;
+  width: 300px;
+  background-size: contain;
+  background-image: url("img/staticBackground.jpg");
+  border-radius: 30px;
+  box-shadow: 0px 0px 10px white;
+  justify-self: center;
+  align-self: center;
+  margin-top: 3ch;
+}
+p {
+}
+#startBtn {
+  width: 30vw;
+  height: 7vh;
+  background-color: black;
+  color: white;
+
+  margin-left: 35vw;
+  margin-top: 3vh;
+  box-shadow: 0px 0px 10px white;
+  border: 0.1em solid white;
+  border-radius: 80px 80px 10px 10px;
+}
+#bpmRange {
+  justify-self: center;
+  width: 70vw;
+  margin-left: 5vw;
+  margin-bottom: 5vh;
+}
+.insturctions {
+  display: grid;
+  grid-template-columns: 30vw 30vw 30vw;
+}
+body > div > div.details > p {
+  font-size: small;
+  margin-bottom: 1vh;
 }

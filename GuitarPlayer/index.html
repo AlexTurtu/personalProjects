@@ -8,14 +8,47 @@
     <title>Guitar player</title>
   </head>
   <body>
-    <div class="mainContaner">
+    <div class="mainContainer">
       <div class="textarea">
         <input type="text" name="textField" id="textFieldID" />
       </div>
       <div class="details">
-        <p>"A" = A Maj</p>
-        <p>"a" = A Min</p>
+        <br />
+        <br />
+        <label for="£bpmRange">BPM:</label>
+        <input type="range" name="bpm" id="bpmRange" />
+        <br />
+        <h3>How it works...</h3>
+        <br />
+        <p>Use the text box above to enter the notes as below:</p>
+
+        <div class="insturctions">
+          <p>"A" = A Maj</p>
+          <p>"a" = a Min</p>
+          <p>"B" = B Maj</p>
+          <p>"b" = b Min</p>
+          <p>"C" = C Maj</p>
+          <p>"c" = c Min</p>
+          <p>"D" = D Maj</p>
+          <p>"d" = d Min</p>
+          <p>"E" = E Maj</p>
+          <p>"e" = e Min</p>
+          <p>"F" = F Maj</p>
+          <p>"f" = f Min</p>
+          <p>"G" = G Min</p>
+          <p>"g" = g Min</p>
+        </div>
+      </div>
+      <div id="gifDiv"></div>
+      <div id="startButtonDiv">
+        <input
+          type="button"
+          value="Start"
+          id="startBtn"
+          onclick="startPlay()"
+        />
       </div>
     </div>
+    <script src="app.js"></script>
   </body>
 </html>
