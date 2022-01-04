@@ -3,7 +3,7 @@ var canvasContext = canvas.getContext("2d");
 var canvasSecond = canvas.getContext("2d");
 var obstacleOne = canvas.getContext("2d");
 canvasSecond.fillStyle = "green";
-var obstacleOneTopMargin = Math.floor(Math.random() * 100);
+var obstacleOneTopMargin = Math.floor(Math.random() * 10);
 // function resize() {
 //   canvasContext.canvas.width = window.innerWidth;
 //   canvasContext.canvas.height = window.innerHeight;
@@ -39,31 +39,24 @@ document.addEventListener("keydown", function (e) {
       break;
     case 32: //Space Key
       console.log("space");
-      drawObstacleOne();
+
       break;
   }
 });
-function drop() {
-  while (posGreeny < canvas.height) {
-    posGreeny += 10;
-    setTimeout(resetMove, 100);
-    drawPlayer();
-  }
-}
-document.addEventListener("keyup", function (x) {
-  switch (x.keyCode) {
-    case 38:
-      setTimeout(setInterval(drop, 1000), 1000);
-  }
-});
+
+// document.addEventListener("keyup", function (x) {
+//   switch (x.keyCode) {
+//     case 38:
+//       setTimeout(setInterval(drop, 1000), 1000);
+//   }
+// });
 function drawPlayer() {
   canvasSecond.fillRect(posGreenX, posGreeny, 10, 10);
 }
 
-function drawObstacleOne() {
-  obstacleOne.fillRect(100, obstacleOneTopMargin, 10, 100);
-}
+// function drawObstacleOne() {
+//   obstacleOne.fillRect(100, obstacleOneTopMargin, 10, 100);
+// }
 
 drawPlayer();
-
-// canvasSecond.fillRect(posGreenX, posGreeny, 10, 10);
+canvasSecond.fillRect(posGreenX, posGreeny, 10, 10);

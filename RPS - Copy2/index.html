@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="rpsStyle.css" />
+    <title>Rock, Paper, Scissros</title>
+  </head>
+  <body>
+    <div class="header">
+      <h2>Rock, Paper, Scissros</h2>
+    </div>
+    <div class="content">
+      <div class="userChoice">
+        <img onclick="userRock()" src="img/rock.png" alt="" id="rock" />
+        <img onclick="userPaper()" src="img/paper.png" alt="" id="paper" />
+        <img
+          onclick="userScissors()"
+          src="img/scissors.png"
+          alt=""
+          id="scirssors"
+        />
+      </div>
+      <div class="buttons">
+        <input type="button" value="Start" onclick="startGame() " />
+      </div>
+
+      <div class="selectionScreen">
+        <div class="computerside">
+          <p id="computerHasSelected">Computer:</p>
+          <div class="computerChoice" id="compChoice"></div>
+        </div>
+
+        <div class="userHasSelected">
+          <p id="userHasSlecedP">User:</p>
+          <div id="userSelectionDisplay"></div>
+        </div>
+      </div>
+      <div class="winResult" id="winResultId">
+        <p id="lastComputerSelect"></p>
+        <br /><br /><br />
+        <p id="lastUserSelect"></p>
+        <br /><br /><br />
+        <h2>The Winner is :</h2>
+        <br /><br />
+        <p id="winner"></p>
+        <br /><br /><br /><br />
+        <input type="button" value="Reset" onclick="resetAll()" />
+      </div>
+    </div>
+
+    <script src="rps.js"></script>
+  </body>
+</html>

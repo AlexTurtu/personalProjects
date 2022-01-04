@@ -2,18 +2,23 @@
   0% {
     background-image: url("img/rock.png");
     background-repeat: no-repeat;
-    transform: rotate(30);
+  }
+  25% {
+    background-image: url("img/rock1.png");
+    background-repeat: no-repeat;
   }
   50% {
     background-image: url("img/rock.png");
     background-repeat: no-repeat;
-    transform: rotate(60);
   }
 
-  100% {
-    background-image: url("img/rock.png");
+  75% {
+    background-image: url("img/rock1.png");
     background-repeat: no-repeat;
-    transform: rotate(30);
+  }
+  100% {
+    background-image: url("img/rock1.png");
+    background-repeat: no-repeat;
   }
 }
 * {
@@ -38,7 +43,7 @@
 
 .animation1 {
   animation-name: computerSelectiionAnimation;
-  animation-duration: 3s;
+  animation-duration: 2s;
 }
 
 .content {

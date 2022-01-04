@@ -1,0 +1,35 @@
+body {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+  background-color: black;
+  color: white;
+}
+
+.grid {
+  margin-top: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  height: 400px;
+  width: 300px;
+  border: 3px solid tomato;
+  border-radius: 5px;
+}
+h3 {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+#reset {
+  margin-top: 30px;
+  background-color: black;
+  color: white;
+  height: 30px;
+  width: 100px;
+  box-shadow: 0px 0px 10px tomato;
+  border-radius: 10px;
+}
+#result {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
