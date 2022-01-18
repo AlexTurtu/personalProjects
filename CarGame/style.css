@@ -1,0 +1,102 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+@keyframes streetMove {
+  0% {
+    background-position-y: 0px;
+    background-repeat: repeat-y;
+  }
+
+  50% {
+    background-position-y: 400px;
+    background-repeat: repeat-y;
+  }
+
+  100% {
+    background-position-y: 790px;
+    background-repeat: repeat-y;
+  }
+}
+@keyframes goDown {
+  0% {
+    top: -300px;
+  }
+  100% {
+    top: 1100px;
+  }
+}
+body {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.bottom {
+  width: 900px;
+  height: 150px;
+  background-color: grey;
+  z-index: 999;
+}
+
+.gameScreen {
+  display: flex;
+  overflow: hidden;
+}
+.leftSide {
+  height: 800px;
+  width: 200px;
+  background-color: grey;
+  background-size: cover;
+  padding: 30px;
+}
+.center {
+  height: 800px;
+  width: 500px;
+  background-image: url(./img/street.png);
+  overflow: hidden;
+  overflow: auto;
+}
+#redCarTop {
+  position: relative;
+  top: 580px;
+  left: 200px;
+
+  z-index: 1000000;
+}
+.rightSide {
+  height: 800px;
+  width: 200px;
+  background-color: grey;
+}
+.car {
+  width: 100px;
+  height: 200px;
+}
+.moveBackgound {
+  background-image: url(./img/street.png);
+  animation-name: streetMove;
+  animation-duration: 2.1s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+.blueCar {
+  position: absolute;
+  top: 900px;
+  height: 200px;
+  width: 100px;
+  background-image: url(./img/blueCar.png);
+}
+.greenCar {
+  position: absolute;
+  top: 900px;
+  height: 200px;
+  width: 100px;
+  background-image: url(./img/greenCar.png);
+}
+.carGoDown {
+  animation-name: goDown;
+  animation-duration: 2.5s;
+  animation-iteration-count: 1;
+  animation-timing-function: linear;
+}
